@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true">
+    <ion-grid class="completa">
+        <ion-row class="ion-align-items-center">
+            <ion-col size="12">
+                <ion-card-content>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                                <ion-button color="light">
+                                    A domicilio
+                                </ion-button>
+                            </ion-col>
+                            <ion-col>
+                                <ion-button color="light">
+                                    Para llevar
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                     </ion-grid>
+                </ion-card-content>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="Inicio">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Inicio</ion-label>
+        <ion-badge>6</ion-badge>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="Explorar">
+        <ion-icon name="search-outline"></ion-icon>
+        <ion-label>Explorar</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="Super">
+        <ion-icon name="bag-outline"></ion-icon>
+        <ion-label>Super</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="Carrito">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-label>Carrito</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="speakers">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Cuenta</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
