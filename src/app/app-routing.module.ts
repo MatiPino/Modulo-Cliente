@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { SesionComponent } from 'src/paginas/sesion/sesion.component';
-import { RegistrarComponent } from 'src/paginas/registrar/registrar.component';
-import { PrincipalComponent } from 'src/paginas/principal/principal.component';
+import { ExplorarComponent } from 'src/paginas/explorar/explorar.component';
  
 const routes: Routes = [
   {
@@ -10,14 +9,11 @@ const routes: Routes = [
     component: SesionComponent
   },
   {
-    path: 'registrar',
-    component: RegistrarComponent
-
+    path: 'explorar',
+    component: ExplorarComponent
   },
-  {
-    path: 'principal',
-    component: PrincipalComponent
-  }
+  
+  
 ];
 @NgModule({
   imports: [

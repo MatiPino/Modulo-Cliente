@@ -4,8 +4,8 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SesionComponent } from 'src/paginas/sesion/sesion.component';
-import { RegistrarComponent } from 'src/paginas/registrar/registrar.component';
-import { PrincipalComponent } from 'src/paginas/principal/principal.component';
+import { ExplorarComponent } from 'src/paginas/explorar/explorar.component';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +14,8 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     SesionComponent,
-    RegistrarComponent,
-    PrincipalComponent],
+    ExplorarComponent,
+    ],
   entryComponents: [],
   imports: [
     BrowserModule, 
