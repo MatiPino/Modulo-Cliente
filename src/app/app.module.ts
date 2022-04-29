@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SesionComponent } from 'src/paginas/sesion/sesion.component';
 import { ExplorarComponent } from 'src/paginas/explorar/explorar.component';
 
 
@@ -13,7 +12,6 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SesionComponent,
     ExplorarComponent,
     ],
   entryComponents: [],
