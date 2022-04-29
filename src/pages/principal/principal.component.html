@@ -35,11 +35,11 @@
               <ion-row class="ordenar">
                     <ion-label class="popular">Populares cerca de ti</ion-label>
                         <ion-select placeholder="Ver más" cancelText="cancelar" okText="seleccionar">
-                            <ion-select-option value="H">Hamburguesas</ion-select-option>
+                            <ion-select-option value="h" (click)="enviarCategoria('Hamburguesas')">Hamburguesas</ion-select-option>
                             <ion-select-option value="d">Donas</ion-select-option>
-                            <ion-select-option value="f">Sushi</ion-select-option>
-                            <ion-select-option value="f">Hot Dog</ion-select-option>
-                            <ion-select-option value="f">Pizza</ion-select-option>
+                            <ion-select-option value="s">Sushi</ion-select-option>
+                            <ion-select-option value="c">Hot Dog</ion-select-option>
+                            <ion-select-option value="p">Pizza</ion-select-option>
                         </ion-select>
                 </ion-row>
               <ion-grid>
@@ -47,25 +47,25 @@
                       <ion-col size="6">
                           <ion-card class="populares">
                               <ion-img src="../../assets/image/macdonals.jpg"></ion-img>
-                              McDonald's
+                              <p>McDonald's</p> 
                           </ion-card>
                       </ion-col>
                       <ion-col size="6">
                           <ion-card class="populares">
                               <ion-img src="../../assets/image/burger kings.jpg"></ion-img>
-                              Burger King
+                              <p>Burger King</p>
                           </ion-card>
                       </ion-col>
                       <ion-col size="6">
                           <ion-card class="populares">
                               <ion-img src="../../assets/image/donki donuts.jpg"></ion-img>
-                              Dunkin'Donuts
+                              <p>Dunkin'Donuts</p>
                           </ion-card>
                       </ion-col>
                       <ion-col size="6">
                           <ion-card class="populares">
                               <ion-img src="../../assets/image/Suchi.jpg"></ion-img>
-                              Sushi
+                              <p>Sushi</p>
                           </ion-card>
                       </ion-col>
                   </ion-row>
