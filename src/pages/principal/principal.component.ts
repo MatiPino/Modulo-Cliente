@@ -8,18 +8,25 @@ import { PrincipalService } from 'src/service/new.service';
 })
 export class PrincipalComponent implements OnInit{
 
+  public comida:Array<any>;
+
   public PrincipalService: PrincipalService;
 
   constructor(public servicio: PrincipalService) {
     /* this.PrincipalService = servicio; */
   }
 
+
+
   ngOnInit () {
-    console.log(this.servicio.obtenerCategoria("hamburgesas"))
+  //   this.servicio.obtenerCategoria("hamburgesas").subscribe(data => {this.comida = data})
+  this.servicio.obtenerComida().subscribe(data => {this.comida = data})
   }
 
   public enviarCategoria(img) {
     this.PrincipalService.obtenerCategoria(img);
+    console.log(this.comida);
+    
   }
 
 }
