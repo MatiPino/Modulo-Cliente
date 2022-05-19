@@ -34,9 +34,8 @@
     background: local;
 }
 
-.tituloOferta {
-    text-align: center;
-    margin-top: 10px;
+.contenidoCarta {
+    width: 100%;
 }
 
 .separador ion-img::part(image) {

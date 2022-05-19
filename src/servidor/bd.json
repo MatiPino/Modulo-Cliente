@@ -3,22 +3,26 @@
     {
       "id": 1,
       "img": "../../assets/image/macdonals.jpg",
-      "categoria": "hamburguesas"
+      "categoria": "hamburguesas",
+      "nombre": "MacDonal's"
     },
     {
       "id": 2,
       "img": "../../assets/image/burger kings.jpg",
-      "categoria": "hamburguesas"
+      "categoria": "hamburguesas",
+      "nombre": "Burger Kings"
     },
     {
       "id": 3,
       "img": "../../assets/image/donki donuts.jpg",
-      "categoria": "donas"
+      "categoria": "donas",
+      "nombre": "Donki Donuts"
     },
     {
       "id": 4,
       "img": "../../assets/image/Suchi.jpg",
-      "categoria": "suchi"
+      "categoria": "suchi",
+      "nombre": "Suchi"
     }
   ]
 }
