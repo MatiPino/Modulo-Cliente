@@ -1,53 +1,58 @@
 <ion-content [fullscreen]="true">
-  <ion-grid class="completa">
-      <ion-row>
-          <ion-col class="envio">
-              <ion-button fill="clear" color="dark" >A domicilio</ion-button>
-              <ion-button fill="clear" color="dark" disabled="false">Para llevar</ion-button>
-          </ion-col>
-      </ion-row>
+    <ion-grid class="completa">
+        <ion-row>
+            <ion-col class="envio">
+                <ion-button fill="clear" color="dark">A domicilio</ion-button>
+                <ion-button fill="clear" color="dark" disabled="false">Para llevar</ion-button>
+            </ion-col>
+        </ion-row>
 
-      <ion-row class="ordenar">
-                  <ion-label class="direccion">Ahora</ion-label>
-                  <ion-select placeholder="Direccion" cancelText="cancelar" okText="seleccionar">
-                      <ion-select-option value="r">Rio sin agua</ion-select-option>
-                      <ion-select-option value="d">Desierto seco</ion-select-option>
-                      <ion-select-option value="f">Flores</ion-select-option>
-                  </ion-select>
-                  <button class="opciones"><ion-icon name="options-outline"></ion-icon></button>                
-      </ion-row>
-      <ion-row>
-          <ion-col size="12">
-          <ion-card class="separador">
-              <ion-card-title class="tituloOferta">Ofertas del dia</ion-card-title>
-              <ion-card class="separador">
-                  <ion-img src="../../assets/image/banner_home_promo_na_v5Ccf07-03-2022.jpg"></ion-img>
-              </ion-card>
-              <ion-card class="separador">
-                  <ion-img src="../../assets/image/l3xa9oanv09uy8y7gaykkabo1epj.jpg"></ion-img>
-              </ion-card>        
-          </ion-card>
-          </ion-col>
-      </ion-row>
+        <ion-row class="ordenar">
+            <ion-label class="direccion">Ahora</ion-label>
+            <ion-select placeholder="Direccion" cancelText="cancelar" okText="seleccionar">
+                <ion-select-option value="r">Rio sin agua</ion-select-option>
+                <ion-select-option value="d">Desierto seco</ion-select-option>
+                <ion-select-option value="f">Flores</ion-select-option>
+            </ion-select>
+            <button class="opciones">
+                <ion-icon name="options-outline"></ion-icon>
+            </button>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12">
+                <ion-card class="separador">
+                    <ion-card-title class="tituloOferta">Ofertas del dia</ion-card-title>
+                    <ion-card class="separador">
+                        <ion-img src="../../assets/image/banner_home_promo_na_v5Ccf07-03-2022.jpg"></ion-img>
+                    </ion-card>
+                    <ion-card class="separador">
+                        <ion-img src="../../assets/image/l3xa9oanv09uy8y7gaykkabo1epj.jpg"></ion-img>
+                    </ion-card>
+                </ion-card>
+            </ion-col>
+        </ion-row>
 
-       <ion-row>
-          <ion-card class="contenidoCarta">
-              <ion-row class="ordenar">
+        <ion-row>
+            <ion-card class="contenidoCarta">
+                <ion-row class="ordenar">
                     <ion-label class="popular">Populares cerca de ti</ion-label>
-                        <ion-select placeholder="Ver más" cancelText="cancelar" okText="seleccionar" [(ngModel)]="valorSeleccionado" (ionChange)="cambiarComida($event)">
-                            <ion-select-option value="">Todas</ion-select-option>
-                            <ion-select-option *ngFor="let x of categoria" value={{x}}>{{x}}</ion-select-option>
-                        </ion-select>
+                    <ion-select placeholder="Ver más" cancelText="cancelar" okText="seleccionar"
+                        [(ngModel)]="valorSeleccionado" (ionChange)="cambiarComida($event)">
+                        <ion-select-option value="">Todas</ion-select-option>
+                        <ion-select-option *ngFor="let x of categoria" value={{x}}>{{x}}</ion-select-option>
+                    </ion-select>
                 </ion-row>
-              <ion-grid>
-                  <ion-row class="separador2">
-                      <ion-col size="6" *ngFor="let x of mostrarComida">
-                          <ion-card class="populares">
-                              <ion-img src="{{x.img}}"></ion-img>
-                              <p>{{x.nombre}}</p> 
-                          </ion-card>
-                    </ion-col>      
-                  </ion-row>
-              </ion-grid>
-          </ion-card>
-      </ion-row>
+                <ion-grid>
+                    <ion-row class="separador2">
+                        <ion-col size="6" *ngFor="let x of mostrarComida">
+                            <ion-card class="populares">
+                                <ion-img src="{{x.img}}"></ion-img>
+                                <p>{{x.nombre}}</p>
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+        </ion-row>
+    </ion-grid>
+</ion-content>
