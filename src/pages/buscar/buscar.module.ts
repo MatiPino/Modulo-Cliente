@@ -6,13 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { BuscarComponent } from './buscar.component';
 
 import { BuscarRoutingModule } from './buscar-routing.module';
+import { PipesModule } from 'src/pipes/pipes.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    BuscarRoutingModule
+    BuscarRoutingModule,
+    PipesModule
   ],
   declarations: [BuscarComponent]
 })

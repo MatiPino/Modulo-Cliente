@@ -1,0 +1,21 @@
+.buscador {
+    position: relative;
+}
+
+.categorias-principales {
+    margin-left: 10px;
+    width: 100%;
+}
+.contenidoCarta {
+    width: 100%;
+}
+.categoria-imagen ion-img::part(image) {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+.categorias {
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}

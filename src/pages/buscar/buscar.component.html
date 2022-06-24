@@ -1,16 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Buscar
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Buscar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+      <ion-searchbar placeholder="Buscar" (ionChange)="cambiarCategoria($event)" animated></ion-searchbar>
+    <h4 class="categorias-principales">Categorias principales</h4>
 
+    <ion-row class="categoria-imagen">
+      <ion-card class="contenidoCarta" >
+        <ion-grid>
+          <ion-row class="categoria-imagen">
+            <ion-col size="6" *ngFor="let foto of mostrarComida | filtro: textoBuscar">
+              <ion-card class="categorias">
+                  <ion-img src="{{foto.img}}"></ion-img>
+                  <p>{{foto.nombre}}</p> 
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>      
+  </ion-row>
+
+  </ion-grid>
 </ion-content>

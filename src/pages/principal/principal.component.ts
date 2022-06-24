@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PrincipalService } from 'src/service/new.service';
+import { PrincipalService } from 'src/service/comida.service';
 import { Comida } from '../interface/categoria/Comida';
 
 @Component({

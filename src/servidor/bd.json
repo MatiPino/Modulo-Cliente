@@ -4,7 +4,7 @@
       "id": 1,
       "img": "../../assets/image/macdonals.jpg",
       "categoria": "hamburguesas",
-      "nombre": "MacDonal's"
+      "nombre": "McDonal's"
     },
     {
       "id": 2,
@@ -23,6 +23,32 @@
       "img": "../../assets/image/Suchi.jpg",
       "categoria": "suchi",
       "nombre": "Suchi"
+    }
+  ],
+  "Categorias":[
+    {
+    "id": 1,
+    "tipo":"hamburguesas",
+    "img": "../../assets/image/hamburguesas.jpg",
+    "nombre": "Hamburguesas"
+    },
+    {
+      "id":2,
+      "tipo":"pizza",
+      "img":"../../assets/image/Pizza.jpg",
+      "nombre": "Pizza"
+    },
+    {
+      "id":3,
+      "tipo":"sushi",
+      "img":"../../assets/image/SushiC.jpg",
+      "nombre": "Sushi"
+    },
+    {
+      "id":4,
+      "tipo":"donas",
+      "img":"../../assets/image/Donas.jpg",
+      "nombre": "Donas"
     }
   ]
 }
