@@ -1,9 +1,82 @@
+/* toolbar section */
+.toolbar {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 3fr 6fr;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.toolbar .tittle{
+    font-weight: bold;
+}
+.searchbar {
+    padding-bottom: 0.5rem;
+}
 .completa {
     min-height: 100vh;
     background-color: white;
     color: black;
 }
 
+/* cardsupers */
+.cardsupers {
+    display: flex;
+}
+.colone {
+    padding: 0;
+}
+.coltwo {
+    padding: 0;
+}
+
+/* express section*/
+.colthree {
+    padding-top: 1rem;
+    padding-left: 0;
+}
+.express {
+    font-weight: bold;
+    padding-top: 0.5rem;
+    padding-left: 0.6rem;
+}
+.three {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
 .imgspid {
     width: 5rem;
+}
+.tittlespid {
+    font-weight: bold;
+}
+
+/* faramacia section */
+.colfour {
+    padding-top: 1rem;
+    padding-left: 0;
+}
+.farmacia {
+    font-weight: bold;
+    padding-top: 0.5rem;
+    padding-left: 0.6rem;
+}
+.four {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.imgsalco {
+    width: 5rem;
+}
+.tittlesalco {
+    font-weight: bold;
+}
+.five {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.imgcruz {
+    width: 5rem;
+}
+.tittlecruz {
+    font-weight: bold;
 }

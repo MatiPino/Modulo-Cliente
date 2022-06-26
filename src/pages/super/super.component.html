@@ -1,37 +1,75 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="toolder">
   <ion-toolbar>
-    <ion-title>Tiendas</ion-title>
+    <div class="toolbar">
+      <ion-title class="tittle">Tiendas</ion-title>
+    </div>
+    <ion-searchbar placeholder="Buscar tiendas y productos" class="searchbar"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-grid class="completa">
-    <ion-searchbar placeholder="Buscar tiendas y productos" class="searchbar"></ion-searchbar>
 
     <ion-row>
-      <ion-col size="6">
+      <ion-card class="cardsupers">
+        <ion-col class="colone">
+          <ion-card>
+            <ion-img src="../../assets/image/jumbo.png"></ion-img>
+          </ion-card>
+          <ion-card>
+            <ion-img src="../../assets/image/lider.png"></ion-img>
+          </ion-card>
+        </ion-col>
+        <ion-col class="coltwo">
+          <ion-card class="santa">
+            <ion-img src="../../assets/image/santa.png"></ion-img>
+          </ion-card>
+          <ion-card>
+            <ion-img src="../../assets/image/paris.png"></ion-img>
+          </ion-card>
+        </ion-col>
+      </ion-card>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="colthree">
         <ion-card>
-          <ion-img src="../../assets/image/jumbo.png"></ion-img>
-        </ion-card>
-        <ion-card>
-          <ion-img src="../../assets/image/santa.png"></ion-img>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <ion-img src="../../assets/image/lider.png"></ion-img>
-        </ion-card>
-        <ion-card>
-          <ion-img src="../../assets/image/paris.png"></ion-img>
+          <ion-title class="express">Express</ion-title>
+          <div class="three">
+            <ion-card class="imgspid">
+              <ion-img src="../../assets/image/spid.png"></ion-img>
+            </ion-card>
+            <div>
+              <p class="tittlespid">SPID<p>
+              <p class="descspid">Express y convivencia</p>
+            </div>
+          </div>
         </ion-card>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col>
-        <ion-title>Express</ion-title>
-        <ion-card class="imgspid">
-          <ion-img src="../../assets/image/spid.png"></ion-img>
+      <ion-col class="colfour">
+        <ion-card>
+          <ion-title class="farmacia">Farmacia</ion-title>
+          <div class="four">
+            <ion-card class="imgsalco">
+              <ion-img src="../../assets/image/salco.png"></ion-img>
+            </ion-card>
+            <div class="cardsalco">
+              <p class="tittlesalco">Salcobrand<p>
+              <p class="descsalco">Salud y belleza</p>
+            </div>
+          </div>
+          <div class="five">
+            <ion-card class="imgcruz">
+              <ion-img src="../../assets/image/cruz.png"></ion-img>
+            </ion-card>
+            <div class="cardcruz">
+              <p class="tittlecruz">Cruz Verde<p>
+              <p class="desccruz">Todos tus medicamentos y más</p>
+            </div>
+          </div>
         </ion-card>
       </ion-col>
     </ion-row>
