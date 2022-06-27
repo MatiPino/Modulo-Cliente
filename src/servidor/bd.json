@@ -28,22 +28,22 @@
   
   "Supermercado": [
     {
-      "id":1,
+      "id": 1,
       "img":"../../assets/image/lider.png",
       "nombre":"Lider"
     },
     {
-      "id":2,
+      "id": 2,
       "img":"../../assets/image/paris.png",
       "nombre":"Paris"
     },
     {
-      "id":3,
+      "id": 3,
       "img":"../../assets/image/santa.png",
       "nombre":"Santa Isabel"
     },
     {
-      "id":4,
+      "id": 4,
       "img":"../../assets/image/jumbo.png",
       "nombre":"Jumbo"
     }
