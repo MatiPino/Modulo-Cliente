@@ -7,7 +7,7 @@ import { Comida } from '../interface/categoria/Comida';
   templateUrl: 'principal.component.html',
   styleUrls: ['principal.component.css']
 })
-export class PrincipalComponent implements OnInit{
+export class PrincipalComponent implements OnInit {
 
   private comida: Array<Comida>;
   public mostrarComida: Array<Comida>;
@@ -21,7 +21,7 @@ export class PrincipalComponent implements OnInit{
     /* this.PrincipalService = servicio; */
   }
 
-  ngOnInit () {
+  ngOnInit() {
 
     this.servicio.obtenerComida().subscribe(data => {
       this.comida = data
@@ -38,7 +38,7 @@ export class PrincipalComponent implements OnInit{
   public devolverCategoria() {
     let misCategorias = []
     for (let i = 0; i < this.comida.length; i++) {
-           misCategorias.push(this.comida[i].categoria)       
+      misCategorias.push(this.comida[i].categoria)
     }
     this.categoria = [...new Set(misCategorias)]
   };
@@ -54,7 +54,7 @@ export class PrincipalComponent implements OnInit{
       lista = this.comida.filter(x => x.categoria == this.valorSeleccionado)
       this.mostrarComida = lista
       console.log(lista);
-    }else if(!this.valorSeleccionado){
+    } else if (!this.valorSeleccionado) {
       this.mostrarComida = this.comida;
     }
   }

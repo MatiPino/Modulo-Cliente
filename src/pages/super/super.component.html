@@ -1,33 +1,16 @@
-<ion-header [translucent]="true" class="toolder">
-  <ion-toolbar>
-    <div class="toolbar">
-      <ion-title class="tittle">Tiendas</ion-title>
-    </div>
-    <ion-searchbar placeholder="Buscar tiendas y productos" class="searchbar"></ion-searchbar>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-grid class="completa">
+    <ion-searchbar placeholder="Buscar tiendas y productos" class="searchbar" (ionChange)="cambiarSuper($event)"></ion-searchbar>
 
     <ion-row>
       <ion-card class="cardsupers">
-        <ion-col class="colone">
-          <ion-card>
-            <ion-img src="../../assets/image/jumbo.png"></ion-img>
-          </ion-card>
-          <ion-card>
-            <ion-img src="../../assets/image/lider.png"></ion-img>
-          </ion-card>
-        </ion-col>
-        <ion-col class="coltwo">
-          <ion-card class="santa">
-            <ion-img src="../../assets/image/santa.png"></ion-img>
-          </ion-card>
-          <ion-card>
-            <ion-img src="../../assets/image/paris.png"></ion-img>
-          </ion-card>
-        </ion-col>
+        <ion-row>
+          <ion-col class="colone" *ngFor="let foto of mostrarSuper | filtro: textoBuscar">
+            <ion-card>
+              <ion-img src="{{foto.img}}"></ion-img>
+            </ion-card>
+          </ion-col>
+        </ion-row>
       </ion-card>
     </ion-row>
 
@@ -57,7 +40,8 @@
               <ion-img src="../../assets/image/salco.png"></ion-img>
             </ion-card>
             <div class="cardsalco">
-              <p class="tittlesalco">Salcobrand<p>
+              <p class="tittlesalco">Salcobrand
+              <p>
               <p class="descsalco">Salud y belleza</p>
             </div>
           </div>
@@ -66,7 +50,8 @@
               <ion-img src="../../assets/image/cruz.png"></ion-img>
             </ion-card>
             <div class="cardcruz">
-              <p class="tittlecruz">Cruz Verde<p>
+              <p class="tittlecruz">Cruz Verde
+              <p>
               <p class="desccruz">Todos tus medicamentos y más</p>
             </div>
           </div>

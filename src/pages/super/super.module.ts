@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { SuperComponent } from './super.component';
 
 import { SuperRoutingModule } from './super-routing.module';
+import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { SuperRoutingModule } from './super-routing.module';
     CommonModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: SuperComponent }]),
-    SuperRoutingModule
+    SuperRoutingModule,
+    PipesModule
   ],
   declarations: [SuperComponent]
 })

@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http'
 import { PrincipalService } from 'src/service/new.service';
+import { SuperService } from 'src/service/super.service';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,10 +19,12 @@ import { PrincipalService } from 'src/service/new.service';
     BrowserModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
+    PipesModule,
     HttpClientModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    PrincipalService
+    PrincipalService,
+    SuperService
   ],
   bootstrap: [AppComponent],
 })
