@@ -5,19 +5,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FiltroPipe implements PipeTransform {
 
-  transform(arreglo: any[], texto: string): any[] {
-    if (texto === ''){
+  transform(arreglo: any[], buscar: string,): any[] {
+    if (buscar === ''){
       return arreglo;
     }
 
-    texto = texto.toLowerCase();
+    buscar = buscar.toLowerCase();
 
     return arreglo.filter(item => {
-      if (item.toLowerCase().includes(texto)) {
-        console.log(item);
+      // console.log(arreglo);
+  
+      if (item.nombre.toLowerCase().includes(buscar)) {
+        // console.log(item);
         return item;
       }
     });
   }
-
 }

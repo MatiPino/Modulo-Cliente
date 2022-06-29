@@ -1,13 +1,14 @@
 <ion-content [fullscreen]="true">
   <ion-grid class="completa">
-    <ion-searchbar placeholder="Buscar tiendas y productos" class="searchbar" (ionChange)="cambiarSuper($event)"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar tiendas y productos" class="searchbar" (ionChange)="cambiarSuper($event)">
+    </ion-searchbar>
 
-    <ion-row>
+    <ion-row class="img">
       <ion-card class="cardsupers">
         <ion-row>
-          <ion-col size="6" class="colone" *ngFor="let foto of mostrarSuper | filtro: textoBuscar">
+          <ion-col size="6" class="colone" *ngFor="let foto of mostrarSuper | filtro: imgBuscar">
             <ion-card>
-              <ion-img src="{{foto.img}}"></ion-img>
+              <ion-img src="{{foto.img}}" class="imgfoto"></ion-img>
             </ion-card>
           </ion-col>
         </ion-row>
@@ -23,7 +24,8 @@
               <ion-img src="../../assets/image/spid.png"></ion-img>
             </ion-card>
             <div>
-              <p class="tittlespid">SPID<p>
+              <p class="tittlespid">SPID
+              <p>
               <p class="descspid">Express y convivencia</p>
             </div>
           </div>

@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { PrincipalService } from 'src/service/new.service';
 import { SuperService } from 'src/service/super.service';
 import { PipesModule } from './pipes/pipes.module';
+import { SuperModule } from 'src/pages/super/super.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { PipesModule } from './pipes/pipes.module';
     IonicModule.forRoot(), 
     AppRoutingModule,
     PipesModule,
-    HttpClientModule
+    HttpClientModule,
+    SuperModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     PrincipalService,
