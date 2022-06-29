@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PrincipalService } from 'src/service/comida.service';
-import { Comida } from '../interface/categoria/Comida';
+import { ComidaService } from 'src/service/comida.service';
+import { Comida } from 'src/interface/Comida';
 
 @Component({
   selector: 'principal',
@@ -15,10 +15,7 @@ export class PrincipalComponent implements OnInit{
 
   public valorSeleccionado: string;
 
-  public PrincipalService: PrincipalService;
-
-  constructor(public servicio: PrincipalService) {
-    /* this.PrincipalService = servicio; */
+  constructor(public servicio: ComidaService) {
   }
 
   ngOnInit () {
@@ -31,20 +28,15 @@ export class PrincipalComponent implements OnInit{
 
   }
 
-  public prueba() {
-    console.log(this.categoria)
-  }
-
   public devolverCategoria() {
     let misCategorias = []
     for (let i = 0; i < this.comida.length; i++) {
-           misCategorias.push(this.comida[i].categoria)       
+      misCategorias.push(this.comida[i].categoria)       
     }
     this.categoria = [...new Set(misCategorias)]
   };
 
   public cambiarComida(categoria: any) {
-    console.log(categoria.detail.value);
     this.comidaCambiada()
   }
 

@@ -41,11 +41,11 @@
                 </ion-row>
               <ion-grid>
                   <ion-row class="separador2">
-                      <ion-col size="6" *ngFor="let x of mostrarComida">
-                          <ion-card class="populares">
-                              <ion-img src="{{x.img}}"></ion-img>
-                              <p>{{x.nombre}}</p> 
-                          </ion-card>
+                    <ion-col size="6" *ngFor="let comida of mostrarComida">
+                        <ion-card class="populares">
+                            <ion-img src="{{comida.img}}"></ion-img>
+                            <p>{{comida.nombre}}</p> 
+                        </ion-card>
                     </ion-col>      
                   </ion-row>
               </ion-grid>

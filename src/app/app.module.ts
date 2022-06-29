@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http'
-import { PrincipalService } from 'src/service/comida.service';
+import { ComidaService } from 'src/service/comida.service';
 import { CategoriaService } from 'src/service/categorias.service';
 import { PipesModule } from 'src/pipes/pipes.module';
 
@@ -23,8 +23,8 @@ import { PipesModule } from 'src/pipes/pipes.module';
     HttpClientModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    PrincipalService,
-    CategoriaService
+    ComidaService,
+    CategoriaService,
   ],
   bootstrap: [AppComponent],
 })

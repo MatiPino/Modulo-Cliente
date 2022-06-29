@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriaService } from 'src/service/categorias.service';
-import { Categorias } from '../interface/categoria/Categorias';
+import { ComidaService } from 'src/service/comida.service';
+import { Comida } from 'src/interface/Comida';
 
 @Component({
   selector: 'app-tab2',
@@ -9,52 +9,67 @@ import { Categorias } from '../interface/categoria/Categorias';
 })
 export class BuscarComponent implements OnInit{
 
-  private comida: Array<Categorias>;
-  public mostrarComida: Array<Categorias>;
+  public comida: Array<Comida>;
+  public mostrarComida: Array<Comida>;
   public categoria: Array<any>;
+  public comidaSeleccionada: string;
+  datosComida = '';
 
-  public categoriaSeleccionada: string;
-
-  public PrincipalService: CategoriaService;
+  public categorias = {'categoria': ['todas', 'hamburguesas', 'donas', 'sushi', 'pizzas']};
   
-  textoBuscar = '';
-
-  constructor(public servicio: CategoriaService) {
-  }
+  
+  constructor(private servidor: ComidaService) {}
 
   ngOnInit () {
 
-    this.servicio.obtenerCategoria().subscribe(data => {
-      this.comida = data
-      this.mostrarComida = data
-      this.devolverCategoria()
+    this.servidor.obtenerComida().subscribe(data => {
+    this.comida = data
+    this.mostrarComida = data
+    this.devolverComida()
     })
-
+    
   }
 
-  public devolverCategoria() {
+  filtroComida( event: any ) {
+    const catego = event.detail.value;
+    if (catego == 'todas') {
+      this.ngOnInit();
+    } else {
+      this.servidor.obtenerComida().subscribe(data => {
+          const temp = data.filter(x => x.categoria == catego)
+          this.comida = temp;
+          this.mostrarComida = temp;
+          this.devolverComida();
+      })
+    }
+    
+    
+  }
+    
+
+  public llamarComida() {
+    let listaComidas = []
+    if (this.comidaSeleccionada) {
+      listaComidas = this.comida.filter(x => x.categoria == this.comidaSeleccionada)
+      this.mostrarComida = listaComidas
+      console.log(listaComidas);
+    }else if(!this.comidaSeleccionada){
+      this.mostrarComida = this.comida
+    }
+  }
+
+  public traerComida(categoria: any) {
+    this.llamarComida()
+    this.datosComida = categoria.detail.value;
+    
+  }
+
+  public devolverComida() {
     let misComidas = []
     for (let i = 0; i < this.comida.length; i++) {
-      misComidas.push(this.comida[i].nombre)       
+      misComidas.push(this.comida[i])       
     }
     this.categoria = [...new Set(misComidas)]
-    
+
   };
-
-  public cambiarCategoria(categoria: any) {
-    this.categoriaCambiada()
-    this.textoBuscar = categoria.detail.value;
-  }
-
-  public categoriaCambiada() {
-    let lista = []
-    if (this.categoriaSeleccionada) {
-      lista = this.comida.filter(x => x.nombre == this.categoriaSeleccionada)
-      this.mostrarComida = lista
-      console.log(lista);
-    }else if(!this.categoriaSeleccionada){
-      this.mostrarComida = this.comida;
-    }
-  }
-
 }

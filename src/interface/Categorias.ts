@@ -1,8 +1,7 @@
 export interface Categorias {
     id: number,
     img: string,
-    nombre: string,
-    tipo: string
+    categoria: string,
 }
 
 interface Type {
