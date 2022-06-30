@@ -63,6 +63,5 @@ export class PrincipalComponent implements OnInit{
       this.mostrarComida = this.comida;
     }
   }
-
 }
 

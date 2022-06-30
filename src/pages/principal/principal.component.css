@@ -40,11 +40,11 @@
     padding-bottom: 1.5rem;
     font-size: 150%;
 }
-.imgpromo {
-    width: 85%;
-}
 .carousel {
     padding-bottom: 2rem;
+}
+.imgpromo {
+    width: 85%;
 }
 .contenidoCarta {
     width: 100%;

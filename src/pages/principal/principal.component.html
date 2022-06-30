@@ -18,19 +18,25 @@
                 <ion-icon name="options-outline"></ion-icon>
             </button>
         </ion-row>
-
+        
         <ion-row class="carousel">
             <ion-title class="titleOf">Ofertas del Día</ion-title>
             <ion-slides #slides pager="true" (ionSlideDidChange)="ionSlideDidChange($event)"
                 (ionSlideReachEnd)="ionSlideReachEnd($event)">
                 <ion-slide>
-                    <img src="../../assets/image/promo1.jpg" class="imgpromo">
+                    <a routerLink="/buscar">
+                        <img src="../../assets/image/promo1.jpg" class="imgpromo">
+                    </a>
                 </ion-slide>
                 <ion-slide>
-                    <img src="../../assets/image/promo2.jpg" class="imgpromo">
+                    <a routerLink="/buscar">
+                        <img src="../../assets/image/promo2.jpg" class="imgpromo">
+                    </a>
                 </ion-slide>
                 <ion-slide>
-                    <img src="../../assets/image/promo3.jpg" class="imgpromo">
+                    <a routerLink="/buscar">
+                        <img src="../../assets/image/promo3.jpg" class="imgpromo">
+                    </a>
                 </ion-slide>
             </ion-slides>
         </ion-row>

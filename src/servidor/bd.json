@@ -31,21 +31,19 @@
       "nombre": "Pizza"
     }
   ],
+
   "Oferta": [
     {
       "id": 1,
-      "img": "",
-      "link": ""
+      "img": "../../assets/image/promo1.jpg"
     },
     {
       "id": 2,
-      "img": "",
-      "link": ""
+      "img": "../../assets/image/promo2.jpg"
     },
     {
       "id": 3,
-      "img": "",
-      "link": ""
+      "img": "../../assets/image/promo3.jpg"
     }
   ]
 }
