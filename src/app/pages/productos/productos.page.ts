@@ -1,51 +1,59 @@
 import { Component, OnInit } from '@angular/core';
-import { ComidaService } from 'src/service/comida.service';
+import { Router } from '@angular/router';
 import { Comida } from 'src/interface/Comida';
+import { ComidaService } from 'src/service/comida.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'buscar.component.html',
-  styleUrls: ['buscar.component.css']
+  selector: 'app-productos',
+  templateUrl: './productos.page.html',
+  styleUrls: ['./productos.page.scss'],
 })
-export class BuscarComponent implements OnInit{
+export class ProductosPage implements OnInit {
+
+  constructor(private servidorComida: ComidaService, private router: Router, private rutaActiva: ActivatedRoute) { }
 
   public comida: Array<Comida>;
   public mostrarComida: Array<Comida>;
   public categoria: Array<any>;
   public comidaSeleccionada: string;
-  datosComida = '';
 
-  public categorias = {'categoria': ['todas', 'hamburguesas', 'donas', 'sushi', 'pizzas']};
-  
-  
-  constructor(private servidor: ComidaService) {}
+  public categorias: string;
 
-  ngOnInit () {
+  datosComida: '';
 
-    this.servidor.obtenerComida().subscribe(data => {
-    this.comida = data
-    this.mostrarComida = data
-    this.devolverComida()
-    })
-    
+  ngOnInit() {
+
+    this.categorias = this.rutaActiva.snapshot.params.id
+    console.log(this.categorias);
+
+
+    this.servidorComida.obtenerComida().subscribe(data => {
+      this.comida = data
+      console.log(data);
+      
+      this.mostrarComida = data
+      this.devolverComida()
+      })
+
   }
+
 
   filtroComida( event: any ) {
     const catego = event.detail.value;
     if (catego == 'todas') {
       this.ngOnInit();
     } else {
-      this.servidor.obtenerComida().subscribe(data => {
-          const temp = data.filter(x => x.categoria == catego)
+      this.servidorComida.obtenerComida().subscribe(data => {
+          const temp = data.filter(x => x.id == catego)
           this.comida = temp;
           this.mostrarComida = temp;
           this.devolverComida();
       })
     }
-    
-    
   }
-    
+
 
   public llamarComida() {
     let listaComidas = []
@@ -58,18 +66,17 @@ export class BuscarComponent implements OnInit{
     }
   }
 
-  public traerComida(categoria: any) {
-    this.llamarComida()
-    this.datosComida = categoria.detail.value;
-    
-  }
-
   public devolverComida() {
     let misComidas = []
     for (let i = 0; i < this.comida.length; i++) {
       misComidas.push(this.comida[i])       
     }
     this.categoria = [...new Set(misComidas)]
-
   };
+
+  public traerRestaurante(categoria: any) {
+    this.llamarComida()
+    this.datosComida = categoria.detail.value; 
+  }
+
 }

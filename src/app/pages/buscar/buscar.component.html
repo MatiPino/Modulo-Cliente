@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Categorias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Explorar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-searchbar placeholder="Buscar" (ionChange)="traerRestaurante($event)" animated></ion-searchbar>
+      <h4 class="categorias-principales">Categorias principales</h4>
+
+  <ion-segment (ionChange)="filtroRestaurantes($event)" scrollable mode="md">
+
+    <ion-segment-button  *ngFor="let categoria of categorias.categoria" value={{categoria}}>
+      <ion-label class="ion-text-capitalize">{{categoria}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  
+      <ion-grid>
+        <ion-row class="categoria-imagen">
+          <ion-col size="6" *ngFor="let restaurante of mostrarRestaurantes| filtro: datosResturantes">
+              <ion-card class="categorias" >
+                <ion-img src="{{restaurante.img}}" ></ion-img>
+                <p>{{restaurante.nombre}}</p>
+                <ion-button (click)="navegar(restaurante.id)">Ver Mas</ion-button>
+              </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+</ion-content>

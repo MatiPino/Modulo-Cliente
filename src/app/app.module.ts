@@ -9,8 +9,9 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http'
 import { ComidaService } from 'src/service/comida.service';
-import { CategoriaService } from 'src/service/categorias.service';
+import { RestauranteService } from 'src/service/restaurantes.service';
 import { PipesModule } from 'src/pipes/pipes.module';
+import { RestaurantesPipe } from '../pipes/restaurantes.pipe';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,8 @@ import { PipesModule } from 'src/pipes/pipes.module';
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ComidaService,
-    CategoriaService,
+    RestauranteService,
+    RestaurantesPipe
   ],
   bootstrap: [AppComponent],
 })

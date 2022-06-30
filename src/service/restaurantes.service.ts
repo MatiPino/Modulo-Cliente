@@ -1,20 +1,20 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Categorias } from "src/interface/Categorias"; 
+import { Restaurantes } from "src/interface/Restaurantes"; 
 
 
 @Injectable ()
-export class CategoriaService {
+export class RestauranteService {
     public img: string;
     public text: string;
-    private url: any = 'http://localhost:3000/Categorias';
+    private url: any = 'http://localhost:3000/Restaurantes';
 
     constructor(private servidor: HttpClient) {
     }
 
-    public obtenerCategoria(): Observable<Array<Categorias>> {
-        return this.servidor.get<Array<Categorias>>(this.url, {
+    public obtenerRestaurante(): Observable<Array<Restaurantes>> {
+        return this.servidor.get<Array<Restaurantes>>(this.url, {
             headers: {
                 'Content-type': 'application/json'
             },

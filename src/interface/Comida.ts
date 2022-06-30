@@ -3,8 +3,5 @@ export interface Comida {
     img: string;
     categoria: string;
     nombre: string;
-}
-
-interface Type {
-    texto: string;
+    restauranteID: number;
 }

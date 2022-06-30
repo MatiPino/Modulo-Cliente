@@ -2,34 +2,70 @@
   "Comida": [
     {
       "id": 1,
-      "img": "../../assets/image/macdonals.jpg",
+      "img": "../../assets/image/comidas/macdonals.jpg",
       "categoria": "hamburguesas",
-      "nombre": "McDonal's"
+      "nombre": "Big Mac",
+      "restauranteID": 1
     },
     {
       "id": 2,
-      "img": "../../assets/image/burger kings.jpg",
+      "img": "../../assets/image/comidas/burger kings.jpg",
       "categoria": "hamburguesas",
-      "nombre": "Burger Kings"
+      "nombre": "Whopper",
+      "restauranteID": 2
     },
     {
       "id": 3,
-      "img": "../../assets/image/donki donuts.jpg",
+      "img": "../../assets/image/comidas/donki donuts.jpg",
       "categoria": "donas",
-      "nombre": "Donki Donuts"
+      "nombre": "dunkin",
+      "restauranteID": 4
     },
     {
       "id": 4,
-      "img": "../../assets/image/Suchi.jpg",
+      "img": "../../assets/image/comidas/Suchi.jpg",
       "categoria": "sushi",
-      "nombre": "Sushi"
+      "nombre": "california roll",
+      "restauranteID": 5
     },
     {
       "id": 5,
-      "img": "../../assets/image/Pizza.jpg",
+      "img": "../../assets/image/comidas/Pizza.jpg",
       "categoria": "pizzas",
-      "nombre": "Pizza"
+      "nombre": "Pepperoni",
+      "restauranteID": 3
+    }   
+  ],
+  "Restaurantes": [
+    {
+      "id":1,
+      "img":"../../assets/image/restaurantes/mcDonals.jpg",
+      "categoria":"hamburguesas",
+      "nombre":"McDonal's"
+    },
+    {
+      "id":2,
+      "img":"../../assets/image/restaurantes/BurgerKings.png",
+      "categoria":"hamburguesas",
+      "nombre":"Burger Kings"
+    },
+    {
+      "id":3,
+      "img":"../../assets/image/restaurantes/PapaJhons.png",
+      "categoria":"pizzas",
+      "nombre":"Papa Jhons"
+    },
+    {
+      "id":4,
+      "img":"../../assets/image/restaurantes/dunkin_logo.png",
+      "categoria":"donas",
+      "nombre":"Donuts"
+    },
+    {
+      "id":5,
+      "img":"../../assets/image/restaurantes/SushiLogo.webp",
+      "categoria":"sushi",
+      "nombre":"Sushi Logo"
     }
-      
   ]
 }
