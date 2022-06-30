@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ComidaService } from 'src/service/comida.service';
 import { Comida } from 'src/interface/Comida';
+import { IonSlides } from '@ionic/angular';
+import { FiltroPipe } from 'src/pipes/filtro.pipe';
 
 @Component({
   selector: 'principal',
@@ -15,17 +17,28 @@ export class PrincipalComponent implements OnInit{
 
   public valorSeleccionado: string;
 
+  @ViewChild('slides',{static:true}) slides: IonSlides;
+
   constructor(public servicio: ComidaService) {
   }
 
   ngOnInit () {
-
     this.servicio.obtenerComida().subscribe(data => {
       this.comida = data
       this.mostrarComida = data
       this.devolverCategoria()
     })
+  }
 
+  ionSlideDidChange(event){
+    // console.log("ionSLideDidChange", event)
+    this.slides.getActiveIndex().then(index=>{
+      console.log(index)
+    })
+  }
+
+  ionSlideReachEnd(event){
+    //console.log("ionSlideReachEnd", event)
   }
 
   public devolverCategoria() {
