@@ -6,10 +6,10 @@ const conexion = require('./config/conexion')
 // primer metodo, get productos estoy consiguiendo todos los productos que se encuentran en la tabla de productos
 rutas.get('/',(entrada, respuesta) => {
     let sql = `select * from PRODUCTO`
-    conexion.query(sql,(err, filas, fields) => {
+    conexion.query(sql,(err, results) => {
         if (err) throw err; 
         else{
-            respuesta.json(filas)
+            respuesta.json(results)
         }
     })
 
