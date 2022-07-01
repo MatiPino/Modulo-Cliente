@@ -1,6 +1,8 @@
 require('./config/conexion');
 const express = require('express');
-const port = (process.env.port || 3000);
+const dotenv = require('dotenv');
+dotenv.config;
+const port = (process.env.PORT || 3000);
 
 
 //express
