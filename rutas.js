@@ -17,16 +17,16 @@ rutas.get('/',(entrada, respuesta) => {
 
 
 // get un producto , estoy consiguiendo el parametro d eentrada en este caso es el id del producto
-rutas.get('/:id',(entrada, respuesta) => {
-    const {id} = entrada.params
-    let sql = `select * from PRODUCTO where idProducto = "${id}"`
-    conexion.query(sql,(error, filas, fields) => {
-        if (error) throw error; 
-        else{
-            respuesta.json(filas)
-        }
-    })
-});
+// rutas.get('/:id',(entrada, respuesta) => {
+//     const {id} = entrada.params
+//     let sql = `select * from PRODUCTO where idProducto = "${id}"`
+//     conexion.query(sql,(error, filas, fields) => {
+//         if (error) throw error; 
+//         else{
+//             respuesta.json(filas)
+//         }
+//     })
+// });
 
 // Agregar productos entrada: parametro de entrada
 rutas.post('/',(entrada, respuesta) => {
