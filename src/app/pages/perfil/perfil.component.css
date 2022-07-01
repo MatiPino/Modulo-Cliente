@@ -1,0 +1,8 @@
+.nous {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+}

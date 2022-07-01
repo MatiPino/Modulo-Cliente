@@ -1,22 +1,42 @@
-.buscador {
-    position: relative;
+.bar {
+    padding-top: 1rem;
 }
 
-.categorias-principales {
-    margin-left: 10px;
+.titcat {
+    margin-left: 0.25rem;
     width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1.05rem;
 }
+
+.filbar {
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+
 .contenidoCarta {
     width: 100%;
 }
+
+.ion-text-capitalize {
+    font-weight: bold;
+    font-size: 0.25;
+}
+
 .categoria-imagen ion-img::part(image) {
-    height: 150px;
+    height: 9.5rem;
     width: 100%;
     object-fit: cover;
 }
+
 .categorias {
-    font-size: 15px;
+    font-size: 0.9rem;
     text-align: center;
     font-weight: bold;
     background-size: cover;
+}
+
+.ver {
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
 }

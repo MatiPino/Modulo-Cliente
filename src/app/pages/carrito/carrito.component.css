@@ -1,0 +1,35 @@
+.imgcon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.imgcar {
+    width: 100%;
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+}
+
+.agr {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 8rem;
+    color: #333333;
+}
+
+.cua {
+    text-align: center;
+    font-size: 1rem;
+    padding-bottom: 3rem;
+    color: #333333;
+}
+
+.boton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}

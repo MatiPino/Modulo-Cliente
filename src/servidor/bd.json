@@ -67,5 +67,19 @@
       "categoria":"sushi",
       "nombre":"Sushi Logo"
     }
+  ],
+  "Promociones": [
+    {
+      "id":1,
+      "img":"../../assets/image/promos/promo1.jpg",
+      "categoria":"hamburguesas",
+      "restauranteID": 2
+    },
+    {
+      "id":2,
+      "img":"../../assets/image/promos/promo2.jpg",
+      "categoria":"hamburguesas",
+      "restauranteID": 1
+    }
   ]
 }

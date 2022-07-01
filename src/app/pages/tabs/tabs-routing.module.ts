@@ -16,10 +16,6 @@ const routes: Routes = [
         loadChildren: () => import('../buscar/buscar.module').then(m => m.BuscarModule)
       },
       {
-        path: 'super',
-        loadChildren: () => import('../super/super.module').then(m => m.SuperModule)
-      },
-      {
         path: 'carrito',
         loadChildren: () => import('../carrito/carrito.module').then(m => m.CarritoModule)
       },

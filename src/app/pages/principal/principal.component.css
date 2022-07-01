@@ -17,6 +17,7 @@
     align-items: center !important;
     justify-content: center;
     display: flex;
+    padding-top: 0.75rem;
 }
 
 .direccion {
@@ -35,10 +36,6 @@
 }
 
 .contenidoCarta {
-    width: 100%;
-}
-
-.separador ion-img::part(image) {
     width: 100%;
 }
 
@@ -62,4 +59,18 @@
 
 p {
     margin: 10px 0px;
+}
+
+.carousel {
+    padding-bottom: 2rem;
+}
+.titleOf {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 125%;
+}
+.imgpromo {
+    width: 85%;
 }

@@ -1,16 +1,13 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Carrito
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Carrito</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-row>
+    <div class="imgcon">
+      <ion-img src="assets/image/carrito/carrito.png" class="imgcar"></ion-img>
+    </div>
 
+    <ion-label class="agr">Agrega artículos a tu lista para comenzar a llenar tu carrito</ion-label>
+
+    <ion-label class="cua">Cuando agregues productos de un restaurante en tu carrito, este aparecerá aquí</ion-label>
+
+    <ion-button color="tertiary" class="boton" (click)="navegar()">Comprar Ahora</ion-button>
+  </ion-row>
 </ion-content>

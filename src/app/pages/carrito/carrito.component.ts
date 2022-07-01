@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class CarritoComponent {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  public navegar() {
+    this.router.navigate(['/tabs/buscar/'])
+  }
 
 }
