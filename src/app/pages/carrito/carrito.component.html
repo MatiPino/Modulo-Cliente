@@ -8,6 +8,16 @@
 
     <ion-label class="cua">Cuando agregues productos de un restaurante en tu carrito, este aparecerá aquí</ion-label>
 
-    <ion-button color="tertiary" class="boton" (click)="navegar()">Comprar Ahora</ion-button>
+    
   </ion-row>
+
+  <ion-list>
+    <ion-item *ngFor="let item of selectedItems" lines="inset">
+      <ion-img src="{{retaurante.img}}"></ion-img> x "{{restaurante.quantity}}" - {{restaurante.name}}
+      <span slot="end">{{restaurante.quantity}}</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-button color="tertiary" class="boton" (click)="presentModal()">Comprar Ahora</ion-button>
+  <ion-button color="tertiary" class="boton" (click)="remove()">Comprar Ahora</ion-button>
 </ion-content>
