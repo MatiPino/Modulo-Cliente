@@ -4,7 +4,6 @@ import { Comida } from 'src/interface/Comida';
 import { ComidaService } from 'src/service/comida.service';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.page.html',
@@ -27,7 +26,6 @@ export class ProductosPage implements OnInit {
 
     this.categorias = this.rutaActiva.snapshot.params.id
     console.log(this.categorias);
-
 
     this.servidorComida.obtenerComida().subscribe(data => {
       this.comida = data
@@ -53,7 +51,6 @@ export class ProductosPage implements OnInit {
       })
     }
   }
-
 
   public llamarComida() {
     let listaComidas = []
