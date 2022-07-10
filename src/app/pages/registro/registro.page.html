@@ -1,0 +1,127 @@
+<ion-content>
+  <ion-grid>
+    <div class="contenedorFormulario">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit($event)">
+
+        <!-- Inicio formulario 3 -->
+        <div class="formularioTres">
+          <div class="datosUsuario">
+            <ion-row>
+              <ion-col size="11">
+                <label for="">Rut</label>
+                <ion-input
+                  class="inputs"
+                  type="text"
+                  formControlName="Rut_cliente"
+                  maxlength="9"
+                ></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="11">
+                <label for="">Correo</label>
+                <ion-input
+                  class="inputs"
+                  type="email"
+                  formControlName="Correo"
+                ></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="11">
+                <label for="">Telefono</label>
+                <ion-input
+                  class="inputs"
+                  type="text"
+                  formControlName="Telefono"
+                  maxlength="9"
+                ></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="11">
+                <label for="">Direccion</label>
+                <ion-input
+                  class="inputs"
+                  type="text"
+                  formControlName="Direccion"
+                  maxlength="9"
+                ></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row class="campoBotones">
+              <ion-col size="5" class="col-center">
+                <ion-button (click)="goHome()">Cancelar</ion-button>
+              </ion-col>
+              <ion-col size="5" class="col-center">
+                <ion-button
+                  (click)="sigPagina('formularioTres')"
+                  [disabled]="validarPagina2()"
+                  >Siguiente</ion-button
+                >
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+        <!-- Fin formulario 3 -->
+
+        <!-- Inicio formulario 4 -->
+        <div class="formularioCuatro oculta">
+          <ion-row>
+            <ion-col size="12">
+              <h3>Crea tu contraseña</h3>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <p>
+                Las contraseñas deben tener un minimo de 8 caracteres, e incluir
+                al menos una letra y un número
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="10">
+              <ion-input
+                class="inputs"
+                [type]="tipoContrasenia"
+                formControlName="Contrasena"
+                required
+              >
+              </ion-input>
+            </ion-col>
+            <ion-col size="2" class="mostrarContraseñaCampo">
+              <ion-icon
+                class="mostrarContraseña"
+                (click)="mostrarContrasenia()"
+                name="eye"
+              ></ion-icon>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row class="campoBotones">
+            <ion-col size="5" class="col-center">
+              <ion-button expand="block" (click)="antPagina('formularioCuatro')"
+                >Volver</ion-button
+              >
+            </ion-col>
+            <ion-col size="5" class="col-center">
+              <ion-button
+                expand="block"
+                type="submit"
+                [disabled]="!registerForm.valid"
+                >Registrarse</ion-button
+              >
+            </ion-col>
+          </ion-row>
+        </div>
+      </form>
+    </div>
+  </ion-grid>
+</ion-content>
+

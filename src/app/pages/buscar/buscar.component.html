@@ -8,7 +8,7 @@
   <ion-searchbar placeholder="Buscar restaurantes" (ionChange)="traerRestaurante($event)" animated class="bar">
   </ion-searchbar>
   <ion-item>
-    <ion-label class="titcat">Categorías Principales</ion-label>
+    <ion-label class="titcat">Restaurantes Principales</ion-label>
   </ion-item>
 
   <ion-item>
@@ -23,8 +23,7 @@
     <ion-row class="categoria-imagen">
       <ion-col size="6" *ngFor="let restaurante of mostrarRestaurantes| filtro: datosResturantes">
         <ion-card class="categorias">
-          <ion-img src="{{restaurante.img}}"></ion-img>
-          <p>{{restaurante.nombre}}</p>
+          <p>{{restaurante.Nombre_Negocio}}</p>
           <ion-button (click)="navegar(restaurante.id)" class="ver" color="tertiary">Ver Más</ion-button>
         </ion-card>
       </ion-col>

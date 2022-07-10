@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ComidaService } from 'src/service/comida.service';
-import { Comida } from 'src/interface/Comida';
-import { RestauranteService } from 'src/service/restaurantes.service';
-import { Restaurantes } from 'src/interface/Restaurantes';
+import { RestauranteService } from 'src/app/service/restaurantes.service';
+import { Restaurantes } from 'src/app/interface/Restaurantes';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class BuscarComponent implements OnInit{
 
-  // --- Restaurantes --- //
   public restaurantes: Array<Restaurantes>;
   public mostrarRestaurantes: Array<Restaurantes>;
   public categoriaRestaurante: Array<any>;
-  public categoriaSeleccionada: string;
+  public restauranteSeleccionado: string;
+  public restauranteInfo: any;
   datosResturantes = '';
 
-  public categorias = {'categoria': ['todas', 'hamburguesas', 'donas', 'sushi', 'pizzas']};
+  public categorias = {'categoria': ['todas', 'McDonals', 'BurgerKing', 'PapaJhons', 'Donuts']};
   
   constructor(private servidorRestaurante: RestauranteService, private router: Router) {}
 
@@ -27,9 +25,10 @@ export class BuscarComponent implements OnInit{
 
     // --- Restaurantes --- //
 
-    this.servidorRestaurante.obtenerRestaurante().subscribe(data => {
-      this.restaurantes = data
-      this.mostrarRestaurantes = data
+    this.servidorRestaurante.getRestaurantes().then(res => {
+      this.restauranteInfo = res
+      this.restaurantes = res
+      this.mostrarRestaurantes = res
       this.devolverRestaurante()
       })
   }
@@ -41,8 +40,8 @@ filtroRestaurantes( event: any ) {
   if (catego == 'todas') {
     this.ngOnInit();
   } else {
-    this.servidorRestaurante.obtenerRestaurante().subscribe(data => {
-        const temp = data.filter(x => x.categoria == catego)
+    this.servidorRestaurante.getRestaurantes().then(data => {
+        const temp = data.filter(x => x.Nombre_Negocio == catego)
         this.restaurantes = temp;
         this.mostrarRestaurantes = temp;
         this.devolverRestaurante();
@@ -50,19 +49,19 @@ filtroRestaurantes( event: any ) {
   }
 }
   
-public llamarRetaurante() {
+public restauranteCambiado() {
   let listaComidas = []
-  if (this.categoriaSeleccionada) {
-    listaComidas = this.restaurantes.filter(x => x.categoria == this.categoriaSeleccionada)
+  if (this.restauranteSeleccionado) {
+    listaComidas = this.restaurantes.filter(x => x.Nombre_Negocio == this.restauranteSeleccionado)
     this.mostrarRestaurantes = listaComidas
     console.log(listaComidas);
-  }else if(!this.categoriaSeleccionada){
+  }else if(!this.restauranteSeleccionado){
     this.mostrarRestaurantes = this.restaurantes
   }
 }
 
 public traerRestaurante(categoria: any) {
-  this.llamarRetaurante()
+  this.restauranteCambiado()
   this.datosResturantes = categoria.detail.value;  
 }
 

@@ -13,8 +13,8 @@ export class FiltroPipe implements PipeTransform {
 
     texto = texto.toUpperCase();
     
-    return arreglo.filter( categoria => {
-      return categoria.nombre.toUpperCase().includes( texto );
+    return arreglo.filter( filtro => {
+      return filtro.Nombre_Negocio.toUpperCase().includes( texto );
     })
 
   }

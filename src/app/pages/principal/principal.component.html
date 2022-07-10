@@ -15,7 +15,7 @@
         
         <ion-row class="carousel">
             <ion-title class="titleOf">Ofertas del Día</ion-title>
-            <ion-slides #slides pager="true" (click)="navegar()">
+            <ion-slides #slides pager="true" (click)="navegar(categoria)">
                 <ion-slide >
                     <ion-img src="../../assets/image/promos/promo1.jpg" class="imgpromo"></ion-img>
                 </ion-slide>
@@ -30,17 +30,17 @@
                 <ion-row class="ordenar">
                     <ion-label class="popular">Populares cerca de ti</ion-label>
                     <ion-select placeholder="Ver más" cancelText="cancelar" okText="seleccionar"
-                        [(ngModel)]="valorSeleccionado" (ionChange)="cambiarComida($event)">
+                        [(ngModel)]="categoriaSeleccionado" (ionChange)="cambiarComida($event)">
                         <ion-select-option value="">Todas</ion-select-option>
                         <ion-select-option *ngFor="let x of categoria" value={{x}}>{{x}}</ion-select-option>
                     </ion-select>
                 </ion-row>
                 <ion-grid>
                     <ion-row class="separador2">
-                        <ion-col size="6" *ngFor="let comida of mostrarComida">
+                        <ion-col size="6" *ngFor="let comidas of mostrarComida" >
                             <ion-card class="populares">
-                                <ion-img src="{{comida.img}}"></ion-img>
-                                <p>{{comida.nombre}}</p>
+                                <ion-img src="{{comidas.Imagen}}"></ion-img>
+                                <p>{{comidas.Nom_prod}}</p>
                             </ion-card>
                         </ion-col>
                     </ion-row>

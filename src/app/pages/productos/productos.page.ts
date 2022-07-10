@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Comida } from 'src/interface/Comida';
-import { ComidaService } from 'src/service/comida.service';
+import { Comida } from 'src/app/interface/Comida';
+import { ComidaService } from 'src/app/service/comida.service';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -17,9 +17,9 @@ export class ProductosPage implements OnInit {
   public comida: Array<Comida>;
   public mostrarComida: Array<Comida>;
   public categoria: Array<any>;
-  public comidaSeleccionada: string;
-
+  public productoSeleccionada: string;
   public categorias: string;
+  public comidaInfo: any;
 
   datosComida: '';
 
@@ -28,12 +28,10 @@ export class ProductosPage implements OnInit {
     this.categorias = this.rutaActiva.snapshot.params.id
     console.log(this.categorias);
 
-
-    this.servidorComida.obtenerComida().subscribe(data => {
-      this.comida = data
-      console.log(data);
-      
-      this.mostrarComida = data
+    this.servidorComida.getProductos().then(res => {
+      this.comida = res
+      console.log(res);
+      this.mostrarComida = res
       this.devolverComida()
       })
 
@@ -46,7 +44,7 @@ export class ProductosPage implements OnInit {
       this.ngOnInit();
     } else {
       this.servidorComida.obtenerComida().subscribe(data => {
-          const temp = data.filter(x => x.id == catego)
+          const temp = data.filter(x => x.idProducto == catego)
           this.comida = temp;
           this.mostrarComida = temp;
           this.devolverComida();
@@ -57,11 +55,11 @@ export class ProductosPage implements OnInit {
 
   public llamarComida() {
     let listaComidas = []
-    if (this.comidaSeleccionada) {
-      listaComidas = this.comida.filter(x => x.categoria == this.comidaSeleccionada)
+    if (this.productoSeleccionada) {
+      listaComidas = this.comida.filter(x => x.Categoria == this.productoSeleccionada)
       this.mostrarComida = listaComidas
       console.log(listaComidas);
-    }else if(!this.comidaSeleccionada){
+    }else if(!this.productoSeleccionada){
       this.mostrarComida = this.comida
     }
   }

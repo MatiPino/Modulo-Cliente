@@ -1,26 +1,84 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Perfil
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title id="title">Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-label class="nous">Nombre de Usuario</ion-label>
-  <ion-item>
-    <ion-label>Ayuda</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Privacidad</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Centro de seguridad de COVID-19</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Quienes somos</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Preferencias comerciales</ion-label>
-  </ion-item>
+<ion-content>
+  <div class="container">
+    <div class="top">
+      <div class="front">
+        <div class="header">
+          <div class="icon">
+            <i class="ri-settings-2-line" (click)="updateUser()"></i>
+          </div>
+          <div class="title">Driver</div>
+          <div class="icon">
+            <i class="ri-delete-bin-line" (click)="deleteUser()"></i>
+          </div>
+        </div>
+        <div class="date">{{now}}</div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="profile">
+        <div class="image" id="img"></div>
+        <div class="status">
+          <div class="paragraphe">
+            <i id="estados">{{setEstado}}</i>
+          </div>
+        </div>
+      </div>
+      <div class="list">
+        <div class="list-item">
+          <div class="left-icon">
+            <i class="ri-fingerprint-2-line"></i>
+          </div>
+          <div class="list-right">
+            <div class="list-title">Rut:</div>
+            <div class="subhead">{{userInfo.Rut_cliente}}</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="left-icon">
+            <i class="ri-flag-line"></i>
+          </div>
+          <div class="list-right">
+            <div class="list-title">Telefono:</div>
+            <div class="subhead">{{userInfo.Telefono}}</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="left-icon">
+            <i class="ri-men-line"></i>
+          </div>
+          <div class="list-right">
+            <div class="list-title">Direccion:</div>
+            <div class="subhead">{{userInfo.Direccion}}</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="left-icon">
+            <i class="ri-mail-line"></i>
+          </div>
+          <div class="list-right">
+            <div class="list-title">Correo:</div>
+            <div class="subhead">{{userInfo.Correo}}</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="center-icon">
+            <i class="ri-logout-box-line" (click)="logOut()"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
 </ion-content>

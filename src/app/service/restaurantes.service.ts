@@ -1,14 +1,14 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Restaurantes } from "src/interface/Restaurantes"; 
+import { Restaurantes } from "src/app/interface/Restaurantes"; 
 
 
 @Injectable ()
 export class RestauranteService {
     public img: string;
     public text: string;
-    private url: any = 'http://localhost:3000/Restaurantes';
+    private url: any = 'https://api-mala.herokuapp.com/restaurantes';
 
     constructor(private servidor: HttpClient) {
     }
@@ -20,5 +20,14 @@ export class RestauranteService {
             },
         });
     }
+
+    async getRestaurantes() {
+        const res = await fetch(`${this.url}`, {
+          method: 'GET',
+        });
+    
+        const resText = await res.text();
+        return JSON.parse(resText);
+      }
 
 }

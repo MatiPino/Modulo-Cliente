@@ -8,8 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http'
-import { ComidaService } from 'src/service/comida.service';
-import { RestauranteService } from 'src/service/restaurantes.service';
+import { ComidaService } from 'src/app/service/comida.service';
+import { RestauranteService } from 'src/app/service/restaurantes.service';
 import { PipesModule } from 'src/pipes/pipes.module';
 import { RestaurantesPipe } from '../pipes/restaurantes.pipe';
 

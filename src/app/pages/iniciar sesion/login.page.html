@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title align="center" id="title">Ingresa a YaVoy</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="container-fluid">
+    <ion-grid class="content">
+      <form>
+        <ion-row class="inicioSesion">
+          <ion-img
+            id="flag"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Flag_of_Chile_%281818-1854%29.svg/220px-Flag_of_Chile_%281818-1854%29.svg.png"
+          >
+          </ion-img>
+        </ion-row>
+      </form>
+      <ion-row>
+        <ion-col>
+          <hr size="8px" color="grey" />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button
+            (click)="forma = !forma"
+            class="boton-correo"
+            expand="full"
+            color="secondary"
+            shape="round"
+          >
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            Continuar con Correo Electronico
+          </ion-button>
+          <div id="form" *ngIf="forma">
+            <form [formGroup]="credentialForm">
+              <ion-item>
+                <ion-input
+                  placeholder="Correo Electronico"
+                  formControlName="Correo"
+                  autofocus="true"
+                  clearInput="true"
+                >
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input
+                  placeholder="Contraseña"
+                  type="password"
+                  clearInput="true"
+                  formControlName="Contrasena"
+                >
+                </ion-input>
+              </ion-item>
+            </form>
+            <div class="center">
+              <ion-button id="" expand="round" (click)="goRegister()"
+                >Registrarse</ion-button
+              >
+              <ion-button
+                class="signIn"
+                expand="round"
+                color="secondary"
+                (click)="login()"
+                >Ingresar</ion-button
+              >
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

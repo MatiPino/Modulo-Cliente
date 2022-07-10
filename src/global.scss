@@ -24,3 +24,42 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+//Alerta de eliminar en perfil
+.delete-alert .alert-wrapper {
+    background: #1f1e1e;
+  }
+  .delete-alert .alert-wrapper h2 {
+    color: #fff;
+  }
+  
+  .delete-alert .boton-eliminar {
+    color: rgb(255, 4, 4);
+  }
+  
+  .delete-alert .alert-wrapper .alert-message {
+    color: #d0d0d0;
+  }
+  
+  //Alerta de modificar en perfil
+  
+  .modify-alert .alert-wrapper {
+    background: #1f1e1e;
+  }
+  
+  .modify-alert .alert-wrapper h2 {
+    color: #fff;
+  }
+  
+  .modify-alert .alert-message {
+    color: #d0d0d0;
+  }
+  
+  .modify-alert .cancelar-modificar {
+    color: rgb(255, 4, 4);
+  }
+  
+  input {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
