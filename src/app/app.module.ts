@@ -12,7 +12,8 @@ import { ComidaService } from 'src/service/comida.service';
 import { RestauranteService } from 'src/service/restaurantes.service';
 import { PipesModule } from 'src/pipes/pipes.module';
 import { RestaurantesPipe } from '../pipes/restaurantes.pipe';
-import { CarritoService } from 'src/service/carrito.service';
+import { PedidoService } from 'src/service/pedido.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +29,8 @@ import { CarritoService } from 'src/service/carrito.service';
     ComidaService,
     RestauranteService,
     RestaurantesPipe,
-    CarritoService
+    PedidoService
+    
   ],
   bootstrap: [AppComponent],
 })

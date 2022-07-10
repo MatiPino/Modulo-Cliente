@@ -2,3 +2,8 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
 }
+
+.boton-agregar {
+    display: flex;
+    justify-content: center;
+}

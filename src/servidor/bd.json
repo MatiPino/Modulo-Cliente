@@ -34,52 +34,60 @@
       "categoria": "pizzas",
       "nombre": "Pepperoni",
       "restauranteID": 3
-    }   
+    }
   ],
   "Restaurantes": [
     {
-      "id":1,
-      "img":"../../assets/image/restaurantes/mcDonals.jpg",
-      "categoria":"hamburguesas",
-      "nombre":"McDonal's"
+      "id": 1,
+      "img": "../../assets/image/restaurantes/mcDonals.jpg",
+      "categoria": "hamburguesas",
+      "nombre": "McDonal's"
     },
     {
-      "id":2,
-      "img":"../../assets/image/restaurantes/BurgerKings.png",
-      "categoria":"hamburguesas",
-      "nombre":"Burger Kings"
+      "id": 2,
+      "img": "../../assets/image/restaurantes/BurgerKings.png",
+      "categoria": "hamburguesas",
+      "nombre": "Burger Kings"
     },
     {
-      "id":3,
-      "img":"../../assets/image/restaurantes/PapaJhons.png",
-      "categoria":"pizzas",
-      "nombre":"Papa Jhons"
+      "id": 3,
+      "img": "../../assets/image/restaurantes/PapaJhons.png",
+      "categoria": "pizzas",
+      "nombre": "Papa Jhons"
     },
     {
-      "id":4,
-      "img":"../../assets/image/restaurantes/dunkin_logo.png",
-      "categoria":"donas",
-      "nombre":"Donuts"
+      "id": 4,
+      "img": "../../assets/image/restaurantes/dunkin_logo.png",
+      "categoria": "donas",
+      "nombre": "Donuts"
     },
     {
-      "id":5,
-      "img":"../../assets/image/restaurantes/SushiLogo.webp",
-      "categoria":"sushi",
-      "nombre":"Sushi Logo"
+      "id": 5,
+      "img": "../../assets/image/restaurantes/SushiLogo.webp",
+      "categoria": "sushi",
+      "nombre": "Sushi Logo"
     }
   ],
   "Promociones": [
     {
-      "id":1,
-      "img":"../../assets/image/promos/promo1.jpg",
-      "categoria":"hamburguesas",
+      "id": 1,
+      "img": "../../assets/image/promos/promo1.jpg",
+      "categoria": "hamburguesas",
       "restauranteID": 2
     },
     {
-      "id":2,
-      "img":"../../assets/image/promos/promo2.jpg",
-      "categoria":"hamburguesas",
+      "id": 2,
+      "img": "../../assets/image/promos/promo2.jpg",
+      "categoria": "hamburguesas",
       "restauranteID": 1
+    }
+  ],
+  "Pedido": [
+    {
+      "id": 1,
+      "idCliente": 1,
+      "idProducto": 1,
+      "idVeneco": 1
     }
   ]
 }
