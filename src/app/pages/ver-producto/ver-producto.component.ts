@@ -6,6 +6,7 @@ import { Pedido } from 'src/app/interface/Pedido';
 import { ComidaService } from 'src/app/service/comida.service';
 import { PedidoService } from 'src/app/service/pedido.service';
 import { IClient } from 'src/app/interface/ICliente';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-ver-producto',
@@ -37,7 +38,7 @@ export class VerProductoComponent implements OnInit {
 
 
 
-  constructor(private ruta: ActivatedRoute, private servicio: ComidaService, private servidorPedido: PedidoService, private router: Router) { }
+  constructor(private ruta: ActivatedRoute, private servicio: ComidaService, private servidorPedido: PedidoService, private router: Router,private alertCtrl: AlertController) { }
 
   async ngOnInit() {
     this.idComida = this.ruta.snapshot.params.id
@@ -46,7 +47,7 @@ export class VerProductoComponent implements OnInit {
     this.comida = producto[0]
   }
 
-  public onSubmit(e) {
+  async onSubmit(e) {
     let nuevoPedido: Pedido = {
     Estado: 'Enviado',
     Fecha_p: this.date,
@@ -57,11 +58,27 @@ export class VerProductoComponent implements OnInit {
     };
     console.log(nuevoPedido);
     
+    let nameRepartidor="";
 
-    this.servidorPedido.enviarPedido(nuevoPedido).subscribe((data) => {
-      return;
-    });
-    this.volver();
+    var res:any = await this.servidorPedido.enviarPedido(nuevoPedido).toPromise();
+
+    nameRepartidor = res.nameRepartidor;
+
+    if(nameRepartidor !== ""){
+      this.alertCtrl
+      .create({
+        header: `Su pedido fue asignado al repartidor: ${res.nameRepartidor}`,
+        buttons: [
+          {
+            text: 'Continuar',
+            handler: () => {
+              this.volver();
+            },
+          },
+        ],
+      })
+      .then((alert) => alert.present());
+    }
   }
 
   volver() {
