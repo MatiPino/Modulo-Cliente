@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ClienteService {
-  private url: string = 'https://api-mala.herokuapp.com/clientes';
+  private url: string = 'https://yavoy-api.herokuapp.com/client';
   private httpClient: HttpClient;
 
   constructor(client: HttpClient) {
@@ -40,7 +40,7 @@ export class ClienteService {
     );
   }
 
-  public loginCliente(nuevosDatos: any) {
-    return this.httpClient.post('https://api-mala.herokuapp.com/login', nuevosDatos);
+  public loginCliente(nuevoData: any) {
+    return this.httpClient.post('https://yavoy-api.herokuapp.com/client/login', nuevoData);
   }
 }

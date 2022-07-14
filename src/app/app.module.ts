@@ -12,6 +12,7 @@ import { ComidaService } from 'src/app/service/comida.service';
 import { RestauranteService } from 'src/app/service/restaurantes.service';
 import { PipesModule } from 'src/pipes/pipes.module';
 import { RestaurantesPipe } from '../pipes/restaurantes.pipe';
+import { PedidoService } from './service/pedido.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { RestaurantesPipe } from '../pipes/restaurantes.pipe';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ComidaService,
     RestauranteService,
+    PedidoService,
     RestaurantesPipe
   ],
   bootstrap: [AppComponent],

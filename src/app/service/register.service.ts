@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import { stringify } from 'querystring';
 import { Observable } from 'rxjs';
 import { IUsuario } from '../interface/IUsuario';
 
@@ -9,12 +8,12 @@ import { IUsuario } from '../interface/IUsuario';
 })
 export class RegisterService {
 
-  private url:string = "https://api-mala.herokuapp.com/"
+  private url:string = "https://yavoy-api.herokuapp.com/"
 
   constructor(private client:HttpClient) { }
 
   public postUsuario(usuario:IUsuario): Observable<IUsuario>{
-    return this.client.post<IUsuario>(`${this.url}agregarCliente`, JSON.stringify(usuario), {
+    return this.client.post<IUsuario>(`${this.url}client`, JSON.stringify(usuario), {
       headers: {"Content-Type": "application/json"}
     })
   }

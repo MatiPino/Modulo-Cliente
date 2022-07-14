@@ -1,21 +1,9 @@
 <ion-content [fullscreen]="true">
     <ion-grid class="completa">
-
-        <ion-row class="ordenar">
-            <ion-label class="direccion">Ahora</ion-label>
-            <ion-select placeholder="Direccion" cancelText="cancelar" okText="seleccionar">
-                <ion-select-option value="r">Río sin Agua</ion-select-option>
-                <ion-select-option value="d">Desierto Seco</ion-select-option>
-                <ion-select-option value="f">Flores sin Polen</ion-select-option>
-            </ion-select>
-            <button class="opciones">
-                <ion-icon name="options-outline"></ion-icon>
-            </button>
-        </ion-row>
         
         <ion-row class="carousel">
             <ion-title class="titleOf">Ofertas del Día</ion-title>
-            <ion-slides #slides pager="true" (click)="navegar(categoria)">
+            <ion-slides #slides pager="true" (click)="navegar()">
                 <ion-slide >
                     <ion-img src="../../assets/image/promos/promo1.jpg" class="imgpromo"></ion-img>
                 </ion-slide>

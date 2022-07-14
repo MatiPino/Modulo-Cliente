@@ -17,7 +17,7 @@ export class BuscarComponent implements OnInit{
   public restauranteInfo: any;
   datosResturantes = '';
 
-  public categorias = {'categoria': ['todas', 'McDonals', 'BurgerKing', 'PapaJhons', 'Donuts']};
+  public categorias = {'categoria': ['todas']};
   
   constructor(private servidorRestaurante: RestauranteService, private router: Router) {}
 
@@ -26,9 +26,10 @@ export class BuscarComponent implements OnInit{
     // --- Restaurantes --- //
 
     this.servidorRestaurante.getRestaurantes().then(res => {
-      this.restauranteInfo = res
-      this.restaurantes = res
-      this.mostrarRestaurantes = res
+      this.restauranteInfo = res.allRestaurants
+      this.restaurantes = res.allRestaurants
+      this.mostrarRestaurantes = res.allRestaurants
+      res.allRestaurants.map(restaurante => this.categorias.categoria.push(restaurante.Nombre_Negocio));
       this.devolverRestaurante()
       })
   }
@@ -41,7 +42,7 @@ filtroRestaurantes( event: any ) {
     this.ngOnInit();
   } else {
     this.servidorRestaurante.getRestaurantes().then(data => {
-        const temp = data.filter(x => x.Nombre_Negocio == catego)
+        const temp = data.allRestaurants.filter(x => x.Nombre_Negocio == catego)
         this.restaurantes = temp;
         this.mostrarRestaurantes = temp;
         this.devolverRestaurante();
@@ -74,6 +75,7 @@ public devolverRestaurante() {
 };
 
 public navegar(categoria) {
+  localStorage.setItem('idRestaurante', categoria);
   this.router.navigate(['/productos/'+`${categoria}`])
 }
 

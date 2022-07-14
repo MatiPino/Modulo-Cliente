@@ -2,6 +2,14 @@
     padding-top: 1rem;
 }
 
+input.searchbar-input{
+    padding-left: 10px !important;
+}
+ion-icon.searchbar-search-icon{
+    top: 0 !important;
+    left: 5px !important;
+}
+
 .titcat {
     margin-left: 0.25rem;
     width: 100%;

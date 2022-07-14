@@ -15,13 +15,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginPage implements OnInit {
   @ViewChild(IonModal) modal: IonModal;
   credentialForm: FormGroup;
-  public client: IClient = {
-    Contrasena: '',
-    Telefono: 0,
-    Correo: '',
-    Direccion: '',
-    Rut_cliente: ''
-  };
+  public client: IClient;
 
   public c_password: '';
 
@@ -52,48 +46,45 @@ export class LoginPage implements OnInit {
 
   async login() {
     const user = {
-      Correo: this.credentialForm.value.Correo,
-      Contrasena: this.credentialForm.value.Contrasena,
+      correo: this.credentialForm.value.Correo,
+      password: this.credentialForm.value.Contrasena,
     };
-    this.clientService.loginCliente(user).subscribe(
-      (res) => {
-        console.log(res);
-        localStorage.setItem(
-          'currentUser',
-          JSON.stringify(res).substring(57, 66)
-        );
-        if (localStorage.key(0) == 'currentUser') {
-          this.alertCtrl
-            .create({
-              header: 'Inicio de sesión exitoso',
-              buttons: [
-                {
-                  text: 'Continuar',
-                  handler: () => {
-                    this.router.navigate(['/tabs/principal']).then(() => {
-                      window.location.reload();
-                    });
-                  },
-                },
-              ],
-            })
-            .then((alert) => alert.present());
-        }
-        console.log(JSON.stringify(res));
-      },
-      (error) => {
-        this.alertCtrl
-          .create({
-            header: 'Error al iniciar sesión',
-            buttons: [
-              {
-                text: 'Continuar',
+
+    var res:any = await this.clientService.loginCliente(user).toPromise();
+
+    if(!res){
+      this.alertCtrl
+      .create({
+        header: 'Error al iniciar sesión',
+        buttons: [
+          {
+            text: 'Continuar',
+          },
+        ],
+      })
+      .then((alert) => alert.present());
+    }
+
+    localStorage.setItem('currentUser', res.data.Rut_cliente);
+
+    if (localStorage.getItem('currentUser')) {
+      this.alertCtrl
+        .create({
+          header: 'Inicio de sesión exitoso',
+          buttons: [
+            {
+              text: 'Continuar',
+              handler: () => {
+                this.router.navigate(['/tabs/principal']).then(() => {
+                  window.location.reload();
+                });
               },
-            ],
-          })
-          .then((alert) => alert.present());
-      }
-    );
+            },
+          ],
+        })
+        .then((alert) => alert.present());
+    }
+
     this.credentialForm.reset();
   }
 
@@ -102,4 +93,3 @@ export class LoginPage implements OnInit {
   }
 
 }
-

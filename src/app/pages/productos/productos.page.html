@@ -1,19 +1,24 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="navegar2()"></ion-back-button>
+    </ion-buttons>
     <ion-title>Productos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-back-button defaultHref="tabs/buscar"></ion-back-button>
   <ion-grid>
-    <ion-row class="categoria-imagen">
+    <ion-row class="categoria-imagen" >
       <ion-col size="6" *ngFor="let comida of mostrarComida">
-        <ion-card class="categorias">
+        <ion-card>
           <ion-img src="{{comida.Imagen}}"></ion-img>
-          <p>{{comida.Nom_prod}}</p>
+          <div class="centrar">
+            <p>{{comida.Nom_prod}}</p>
+            <ion-button color="tertiary" class="boton-agregar" (click)="navegar(comida.idProducto)">Ver Detalle</ion-button>  
+          </div>
         </ion-card>
       </ion-col>
-    </ion-row>
+      </ion-row>
   </ion-grid>
 </ion-content>

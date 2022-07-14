@@ -6,7 +6,7 @@ import { IUser } from '../pages/perfil/user.model';
   providedIn: 'root',
 })
 export class UserService {
-  private url: string = 'https://api-mala.herokuapp.com/clientes';
+  private url: string = 'https://yavoy-api.herokuapp.com/client';
   private http: HttpClient;
 
   constructor(client: HttpClient) {
@@ -14,7 +14,7 @@ export class UserService {
   }
 
   async getUser(userRut: string) {
-    const res = await fetch(`${this.url}?rut=${userRut}`, {
+    const res = await fetch(`${this.url}?Rut_cliente=${userRut}`, {
       method: 'GET',
     });
 
@@ -28,6 +28,6 @@ export class UserService {
   }
 
   deleteUser(userRut: string) {
-    return this.http.delete(`${this.url}?rut=${userRut}`);
+    return this.http.delete(`${this.url}?Rut_cliente=${userRut}`);
   }
 }

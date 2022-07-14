@@ -16,10 +16,6 @@ const routes: Routes = [
         loadChildren: () => import('../buscar/buscar.module').then(m => m.BuscarModule)
       },
       {
-        path: 'carrito',
-        loadChildren: () => import('../carrito/carrito.module').then(m => m.CarritoModule)
-      },
-      {
         path: 'perfil',
         loadChildren: () => import('../perfil/perfil.module').then(m => m.PerfilModule)
       },

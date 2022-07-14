@@ -27,11 +27,11 @@ export class PrincipalComponent implements OnInit {
   ngOnInit() {
 
     this.servicio.getProductos().then((res) => {
-      this.comidaInfo = res;
+      this.comidaInfo = res.allProducts;
       // console.log(this.comidaInfo); Me muestra cada productos con su array
-      this.comidaInterface = res;
-      this.comida = res
-      this.mostrarComida = res
+      this.comidaInterface = res.allProducts;
+      this.comida = res.allProducts
+      this.mostrarComida = res.allProducts
       this.devolverCategoria()
       
     })
@@ -59,15 +59,14 @@ export class PrincipalComponent implements OnInit {
     if (this.categoriaSeleccionado) {
       lista = this.comida.filter(x => x.Categoria == this.categoriaSeleccionado)
       this.mostrarComida = lista
-      // console.log(lista); Muestra la array de cada objeto llamado por categoria
     } else if (!this.categoriaSeleccionado) {
       this.mostrarComida = this.comida;
     }
   }
 
 
-  public navegar(categoria) {
-    this.router.navigate(['/productos/'+`${categoria}`])
+  public navegar() {
+    this.router.navigate(['/tabs/buscar'])
   }
 }
 

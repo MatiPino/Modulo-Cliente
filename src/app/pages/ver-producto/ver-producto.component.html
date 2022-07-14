@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="navegar()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle de {{comida.Nom_prod}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-card class="card-detalle">
+            <div>
+              <ion-img src="{{comida.Imagen}}"></ion-img>
+              <div>
+                <ion-item>{{comida.Nom_prod}}</ion-item>
+              </div>
+              <div>
+                <ion-item>{{comida.Categoria}}</ion-item>
+              </div>
+              <div>
+                <ion-item>${{comida.Precio}}</ion-item>
+              </div>
+            </div>
+            <div class="centrar">
+              <ion-button color="tertiary" class="boton-pagar" (click)="onSubmit()">Comprar Pedido</ion-button>
+            </div>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

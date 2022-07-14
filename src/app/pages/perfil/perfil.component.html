@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
+      <ion-back-button defaultHref="/tabs/principal"></ion-back-button>
     </ion-buttons>
     <ion-title id="title">Perfil</ion-title>
   </ion-toolbar>
@@ -15,7 +15,7 @@
           <div class="icon">
             <i class="ri-settings-2-line" (click)="updateUser()"></i>
           </div>
-          <div class="title">Driver</div>
+          <div class="title">Perfil</div>
           <div class="icon">
             <i class="ri-delete-bin-line" (click)="deleteUser()"></i>
           </div>
@@ -26,11 +26,6 @@
     <div class="bottom">
       <div class="profile">
         <div class="image" id="img"></div>
-        <div class="status">
-          <div class="paragraphe">
-            <i id="estados">{{setEstado}}</i>
-          </div>
-        </div>
       </div>
       <div class="list">
         <div class="list-item">

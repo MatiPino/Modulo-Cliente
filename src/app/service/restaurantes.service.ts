@@ -8,7 +8,7 @@ import { Restaurantes } from "src/app/interface/Restaurantes";
 export class RestauranteService {
     public img: string;
     public text: string;
-    private url: any = 'https://api-mala.herokuapp.com/restaurantes';
+    private url: any = 'https://yavoy-api.herokuapp.com/restaurant';
 
     constructor(private servidor: HttpClient) {
     }

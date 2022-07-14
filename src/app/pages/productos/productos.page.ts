@@ -28,10 +28,9 @@ export class ProductosPage implements OnInit {
     this.categorias = this.rutaActiva.snapshot.params.id
     console.log(this.categorias);
 
-    this.servidorComida.getProductos().then(res => {
-      this.comida = res
-      console.log(res);
-      this.mostrarComida = res
+    this.servidorComida.getProductosRestaurante(this.categorias).then(res => {
+      this.comida = res.products
+      this.mostrarComida = res.products
       this.devolverComida()
       })
 
@@ -58,7 +57,6 @@ export class ProductosPage implements OnInit {
     if (this.productoSeleccionada) {
       listaComidas = this.comida.filter(x => x.Categoria == this.productoSeleccionada)
       this.mostrarComida = listaComidas
-      console.log(listaComidas);
     }else if(!this.productoSeleccionada){
       this.mostrarComida = this.comida
     }
@@ -76,5 +74,14 @@ export class ProductosPage implements OnInit {
     this.llamarComida()
     this.datosComida = categoria.detail.value; 
   }
+
+  public navegar(id) {
+    this.router.navigate(['/verProducto/'+ id])
+  }
+
+  public navegar2() {
+    this.router.navigate(['/tabs/buscar/'])
+  }
+
 
 }

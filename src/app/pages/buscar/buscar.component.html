@@ -24,7 +24,7 @@
       <ion-col size="6" *ngFor="let restaurante of mostrarRestaurantes| filtro: datosResturantes">
         <ion-card class="categorias">
           <p>{{restaurante.Nombre_Negocio}}</p>
-          <ion-button (click)="navegar(restaurante.id)" class="ver" color="tertiary">Ver Más</ion-button>
+          <ion-button (click)="navegar(restaurante.idRestaurante)" class="ver" color="tertiary">Ver Más</ion-button>
         </ion-card>
       </ion-col>
     </ion-row>

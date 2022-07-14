@@ -1,10 +1,10 @@
 import { Component, OnInit} from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import {Router } from '@angular/router';
-import { IUser } from 'src/app/pages/perfil/user.model';
 import { AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { AppComponent } from 'src/app/app.component';
+import { IUsuario } from 'src/app/interface/IUsuario';
 
 @Component({
   selector: 'app-perfil',
@@ -12,15 +12,16 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./perfil.component.css'],
 })
 export class PerfilComponent implements OnInit{
-  public user: IUser;
-  public userInfo = {};
+  public user: IUsuario;
+  public userInfo = {
+    Rut_cliente: '',
+    Telefono: 0,
+    Direccion: '',
+    Correo: ''
+  };
 
   public date = new Date();
   public now = this.date.toLocaleDateString();
-
-  public estado = 'true';
-  public setEstado = '';
-
 
   constructor(
     public service: UserService,
@@ -29,14 +30,15 @@ export class PerfilComponent implements OnInit{
     public appComponent: AppComponent
   ) {}
 
-  public rutLocalStorage = JSON.parse(localStorage.getItem('currentUser'));
-  public userRut: string = JSON.stringify(this.rutLocalStorage);
+   
+  public userRut: string = localStorage.getItem('currentUser');
 
   ngOnInit() {
     this.service.getUser(this.userRut).then((res) => {
-      this.userInfo = res.data[0];
+      this.userInfo = res.client[0];
       console.log(this.userInfo);
-      this.user = res.data[0];
+      
+      this.user = res.client[0];
     });
   }
 
@@ -82,7 +84,6 @@ export class PerfilComponent implements OnInit{
             text: 'Confirmar',
             cssClass: 'boton-modificar',
             handler: (res) => {
-              //Validaciones para patch, por que no poder dejar campos en blanco es de programador garka
 
               if (res.correo == '') {
                 res.correo = this.user.Correo;
